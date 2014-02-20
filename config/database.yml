@@ -51,10 +51,4 @@ test:
   # username: Bri_B_Que
   # password:
 
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: Bri_B_Que_production
-#   pool: 5
-#   username: Bri_B_Que
-#   password:
+
