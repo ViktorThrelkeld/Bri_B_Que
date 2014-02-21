@@ -26,9 +26,9 @@ Then(/^I should not see "(.*?)"$/) do |text|
    page.should_not have_content(text)
 end
 
-# When(/^I should not see "(.*?)"$/) do |text|
-#   page.should_not have_content(text)
-# end
+Given(/^the user "(.*?)" with "(.*?)"$/) do |email, password|
+  User.create(email: email, password: password, password_confirmation: password)
+end
 
 
 Given(/^the following user:$/) do |table|
