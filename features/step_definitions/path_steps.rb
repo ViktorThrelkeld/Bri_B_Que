@@ -4,6 +4,8 @@ def path_to path_descriptor
     root_path
   when "Add A Recipe"
     add_a_recipe_path
+  when "the sign in page"
+    new_user_session_path
   else
     raise "Oh noes! You need to specify where this route goes in step_defintions/path_steps.rb"
   end
