@@ -2,7 +2,7 @@ Feature: Create a recipe
   In order to share and compare recipes
   As a Barbeque enthusiast
   I want to post my recipes
-@wip
+
   Scenario: Trying to create a blank recipe fails
     Given I am on the homepage
     Then I click "Sign In"
