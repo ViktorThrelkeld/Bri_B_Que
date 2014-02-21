@@ -1,3 +1,4 @@
+@wip
 Feature: Create a recipe
   In order to share and compare recipes
   As a Barbeque enthusiast
@@ -16,7 +17,7 @@ Feature: Create a recipe
     Then I should see "Add A Recipe"
     When I press "Add Recipe"
     Then I should see "Your fields can't be blank"
-@wip
+
   Scenario: Creating a recipe with a body succeeds
     When I go to "Add A Recipe"
     Then I should see "Add A Recipe"
