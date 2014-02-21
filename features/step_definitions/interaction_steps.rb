@@ -18,6 +18,24 @@ Then(/^I click "(.*?)"$/) do |link|
   click_link(link)
 end
 
+When(/^I follow "(.*?)"$/) do |link|
+  click_link(link)
+end
+
+Then(/^I should not see "(.*?)"$/) do |text|
+   page.should_not have_content(text)
+end
+
+# When(/^I should not see "(.*?)"$/) do |text|
+#   page.should_not have_content(text)
+# end
+
+
+Given(/^the following user:$/) do |table|
+  # table is a Cucumber::Ast::Table
+  pending # express the regexp above with the code you wish you had
+end
+
 
 
 

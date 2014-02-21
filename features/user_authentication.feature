@@ -1,4 +1,4 @@
-@wip
+
 Feature: User authentication
   As a user
   I want to be able to sign up/sign in/sign out
@@ -8,7 +8,7 @@ Feature: User authentication
   - Standard login/logout
 
   Scenario: User signs up with email and password
-    When I go to the home page
+    When I go to the homepage
     And I follow "Sign Up"
     And I fill in "joe@example.com" for "Email"
     And I fill in "password" for "user_password"
