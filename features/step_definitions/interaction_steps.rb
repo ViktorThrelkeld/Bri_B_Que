@@ -27,7 +27,8 @@ Then(/^I should not see "(.*?)"$/) do |text|
 end
 
 Given(/^the user "(.*?)" with "(.*?)"$/) do |email, password|
-  User.create(email: email, password: password, password_confirmation: password)
+  user = User.create(email: email, password: password, password_confirmation: password)
+  user.create_profile(bio: "MY PROFILE!!!!!!")
 end
 
 
@@ -36,6 +37,16 @@ Given(/^the following user:$/) do |table|
   pending # express the regexp above with the code you wish you had
 end
 
+When(/^I sign up$/) do
+  steps %Q{
+    When I go to the homepage
+    And I follow "Sign Up"
+    And I fill in "joe@example.com" for "Email"
+    And I fill in "password" for "user_password"
+    And I fill in "password" for "Password confirmation"
+    And I press "Sign up"
+  }
+end
 
 
 

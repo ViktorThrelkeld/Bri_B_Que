@@ -6,6 +6,13 @@ def path_to path_descriptor
     add_a_recipe_path
   when "the sign in page"
     new_user_session_path
+  when "the create a profile page"
+    new_profile_path
+  when "my profile page"
+    profile_path(User.last.profile)
+  when "update profile page"
+    edit_profile_path(User.last.profile)
+
   else
     raise "Oh noes! You need to specify where this route goes in step_defintions/path_steps.rb"
   end

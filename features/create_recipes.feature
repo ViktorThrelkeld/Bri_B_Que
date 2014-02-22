@@ -9,11 +9,12 @@ Feature: Create a recipe
     Then I click "Sign In"
     And I fill in "joe@example.com" for "Email"
     And I fill in "password" for "Password"
-    And I press "Sign In"
-    Then I should be on that user's profile page
-    And I should see "Add A Recipe"
+    And I press "Sign in"
+    Then I go to the homepage
+    And I follow "My Profile"
+    Then I should see "Add A Recipe"
     When I press "Add A Recipe"
-    And I should be on Add A Recipe page
+    Then I should be on the Add A Recipe page
     Then I should see "Add A Recipe"
     When I press "Add Recipe"
     Then I should see "Your fields can't be blank"

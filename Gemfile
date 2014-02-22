@@ -33,6 +33,7 @@ group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'letter_opener'
+  gem 'pry'
 end
 
 group :test do
