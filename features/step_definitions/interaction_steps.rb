@@ -28,10 +28,6 @@ Then(/^I should not see "(.*?)"$/) do |text|
    page.should_not have_content(text)
 end
 
-# Given(/^the user "(.*?)" with "(.*?)"$/) do |email, password|
-#   user = User.create(email: email, password: password, password_confirmation: password)
-#   user.create_profile(bio: "MY PROFILE!!!!!!")
-# end
 
 Given(/^the user "(.*?)"\/"(.*?)" with "(.*?)"$/) do |username, email, password|
  user = User.create(username: username, email: email, password: password, password_confirmation: password)
@@ -43,10 +39,7 @@ Given(/^the following user:$/) do |table|
   pending # express the regexp above with the code you wish you had
 end
 
-#uncommenting this breaks tons of stuff
-# Given(/^the user "(.*?)" with "(.*?)"$/) do |arg1, arg2|
-#   pending # express the regexp above with the code you wish you had
-# end
+
 
 When(/^I sign up$/) do
   steps %Q{
@@ -59,6 +52,20 @@ When(/^I sign up$/) do
     And I press "Sign up"
   }
 end
+
+# When(/^I sign in$/) do
+#    steps %Q{
+#     Given the user "joe"/"joe@example.com" with "password"
+#     When I go to the homepage
+#     And I follow "Sign In"
+#     And I fill in "joe@example.com" for "Email"
+#     And I fill in "password" for "Password"
+#     And I press "Sign in"
+#     Then I should see "Signed in successfully."
+#     And I should be on the homepage
+#     And I should see "My Profile"
+#    }
+# end
 
 
 
