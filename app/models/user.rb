@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile
+
+  def self.find_for_database_authentication(conditions)
+    self.where(:username => conditions[:email]).first || self.where(:email => conditions[:email]).first
+  end
+
+
 end

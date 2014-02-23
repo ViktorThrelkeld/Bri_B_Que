@@ -11,8 +11,8 @@ Feature: User resets password
     # Given the following user:
     #   | email    | user@email.com |
     #   | password | password       |
-    Given the user "user@email.com" with "password"
-
+    # Given the user "user@email.com" with "password"
+    Given the user "jill"/"user@email.com" with "password"
 
   Scenario: Happy path
     Given I am on the sign in page

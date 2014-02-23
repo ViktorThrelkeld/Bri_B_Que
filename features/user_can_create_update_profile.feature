@@ -12,9 +12,9 @@ Feature: Create and update profile
     And I press "Create Profile"
     Then I should see "Your Profile"
     And I should see "BBQ Ambassador"
-  @focus
+
   Scenario: User edits profile
-    Given the user "joe@example.com" with "password"
+    Given the user "joe"/"joe@example.com" with "password"
     When I go to the homepage
     And I follow "Sign In"
     And I fill in "joe@example.com" for "Email"
