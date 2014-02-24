@@ -53,19 +53,16 @@ When(/^I sign up$/) do
   }
 end
 
-# When(/^I sign in$/) do
-#    steps %Q{
-#     Given the user "joe"/"joe@example.com" with "password"
-#     When I go to the homepage
-#     And I follow "Sign In"
-#     And I fill in "joe@example.com" for "Email"
-#     And I fill in "password" for "Password"
-#     And I press "Sign in"
-#     Then I should see "Signed in successfully."
-#     And I should be on the homepage
-#     And I should see "My Profile"
-#    }
-# end
+When(/^I sign in$/) do
+   steps %Q{
+    Given the user "joe"/"joe@example.com" with "password"
+    When I go to the homepage
+    And I follow "Sign In"
+    And I fill in "joe@example.com" for "Email"
+    And I fill in "password" for "Password"
+    And I press "Sign in"
+   }
+end
 
 
 
