@@ -35,7 +35,7 @@ Feature: Create a recipe
     And I should see "30 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
 
-
+  @focus
   Scenario: User can see Recipes listed on My Profile
     Given the following user:
       | username              | joe             |
@@ -44,11 +44,16 @@ Feature: Create a recipe
       | bio            |MY PROFILE|
     And that user has the following recipe:
       |title        | Ribs|
-      |prep_time    | 5 |
+      |prep_time    | 5 hrs. |
       |instructions |smoke 'em if u got 'em|
+      And that user has the following recipe:
+      |title        | Hot Chicken|
+      |prep_time    | 30 min.    |
+      |instructions |Fry and eat |
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
     And I should see "Ribs"
+    And I should see "Hot Chicken"
 
 
