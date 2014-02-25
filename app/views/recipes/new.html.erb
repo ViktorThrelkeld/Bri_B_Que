@@ -3,5 +3,9 @@
 <%= form_for Recipe.new do |f| %>
   <%= f.label :title %>
   <%= f.text_area(:title) %>
+  <%= f.label :prep_time %>
+  <%= f.text_area(:prep_time) %>
+  <%= f.label :instructions %>
+  <%= f.text_area(:instructions) %>
   <%= f.submit "Post Recipe" %>
 <% end %>

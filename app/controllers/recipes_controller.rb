@@ -7,7 +7,11 @@ class RecipesController < ApplicationController
   def create
     @recipe = current_user.recipes.new(recipe_params)
     if @recipe.save
+      flash[:notice] = "Your recipe has been posted"
       redirect_to recipe_path(@recipe)
+    else
+      flash[:alert] = "Your fields can't be blank."
+      render
     end
   end
 
@@ -19,6 +23,6 @@ class RecipesController < ApplicationController
 
 private
   def recipe_params
-    params.require(:recipe).permit(:title)
+    params.require(:recipe).permit(:title, :prep_time, :instructions)
   end
 end
