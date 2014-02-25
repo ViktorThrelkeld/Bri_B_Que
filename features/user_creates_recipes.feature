@@ -13,8 +13,8 @@ Feature: Create a recipe
     Then I should see "Create A Recipe"
     When I press "Post Recipe"
     Then I should see "Your fields can't be blank"
-  @focus
-  Scenario: Creating a recipe with a title succeeds
+
+  Scenario: User can create a recipe with a title,prep time and instructions succeeds
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
@@ -23,7 +23,6 @@ Feature: Create a recipe
     When I fill in "Hot Chicken" for "Title"
     And I fill in "30 min." for "Prep time"
     And I fill in "1. Fry chicken and douse in hot sauce 2. Enjoy!" for "Instructions"
-    # And I fill in "Grill" for "Instructions Here"
     And I press "Post Recipe"
     Then I should see "Your recipe has been posted"
     And I should be on the show recipe page
@@ -31,5 +30,11 @@ Feature: Create a recipe
     And I should see "30 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
 
+  @wip
+  Scenario: User can see Recipes listed on My Profile
+    When I sign in
+    When I follow "My Profile"
+    Then I should be on my profile page
+    # And I should see ""
 
 
