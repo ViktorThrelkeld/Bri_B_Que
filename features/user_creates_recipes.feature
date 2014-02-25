@@ -14,7 +14,7 @@ Feature: Create a recipe
     When I press "Post Recipe"
     Then I should see "Your fields can't be blank"
 
-  Scenario: User can create a recipe with a title,prep time and instructions succeeds
+  Scenario: User can create a recipe with a title, prep time and instructions succeeds
     Given the following user:
       | username              | joe             |
       | email                 | joe@example.com |
@@ -35,11 +35,20 @@ Feature: Create a recipe
     And I should see "30 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
 
-  @wip
+
   Scenario: User can see Recipes listed on My Profile
+    Given the following user:
+      | username              | joe             |
+      | email                 | joe@example.com |
+    And that user has the following profile:
+      | bio            |MY PROFILE|
+    And that user has the following recipe:
+      |title        | Ribs|
+      |prep_time    | 5 |
+      |instructions |smoke 'em if u got 'em|
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
-    # And I should see ""
+    And I should see "Ribs"
 
 
