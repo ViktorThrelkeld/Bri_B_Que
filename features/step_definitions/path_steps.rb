@@ -2,8 +2,10 @@ def path_to path_descriptor
   case path_descriptor
   when "the homepage"
     root_path
-  when "Add A Recipe"
-    add_a_recipe_path
+  when "the create a recipe page"
+    new_recipe_path
+  when "the show recipe page"
+    recipe_path(User.last.recipes.last)
   when "the sign in page"
     new_user_session_path
   when "the create a profile page"

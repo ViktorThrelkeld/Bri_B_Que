@@ -7,6 +7,7 @@ BriBQue::Application.routes.draw do
   root 'home#home'
 
   resources :profiles
+  resources :recipes
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

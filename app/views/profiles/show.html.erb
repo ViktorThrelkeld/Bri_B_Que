@@ -1,4 +1,4 @@
 <h1>Your Profile</h1>
 <p><%= @profile.bio %></p>
 <%= button_to "Update Profile", edit_profile_path(@profile), :method => :get %>
-<%= button_to "Add A Recipe", "#" %>
+<%= link_to "New Recipe", new_recipe_path, :method=>:get%>
