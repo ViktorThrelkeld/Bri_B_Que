@@ -15,6 +15,11 @@ Feature: Create a recipe
     Then I should see "Your fields can't be blank"
 
   Scenario: User can create a recipe with a title,prep time and instructions succeeds
+    Given the following user:
+      | username              | joe             |
+      | email                 | joe@example.com |
+    And that user has the following profile:
+      | bio            |MY PROFILE|
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page

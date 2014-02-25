@@ -41,7 +41,10 @@ Feature: User authentication
     Then I should see "Signed in successfully."
 
   Scenario: User can log in and log out with email
-    Given the user "joe"/"joe@example.com" with "password"
+    Given the following user:
+      | username              | joe             |
+      | email                 | joe@example.com |
+    # Given the user "joe"/"joe@example.com" with "password"
     When I go to the homepage
     And I follow "Sign In"
     And I fill in "joe@example.com" for "Email / Username"
@@ -55,7 +58,10 @@ Feature: User authentication
     And I should see "Sign In"
 
   Scenario: User can log in with username
-    Given the user "joe"/"joe@example.com" with "password"
+    Given the following user:
+      | username              | joe             |
+      | email                 | joe@example.com |
+    # Given the user "joe"/"joe@example.com" with "password"
     When I go to the homepage
     And I follow "Sign In"
     And I fill in "joe" for "Email / Username"

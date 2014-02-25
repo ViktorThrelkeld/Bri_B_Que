@@ -14,7 +14,14 @@ Feature: Create and update profile
     And I should see "BBQ Ambassador"
 
   Scenario: User edits profile
-    Given the user "joe"/"joe@example.com" with "password"
+    Given the following user:
+      | username              | joe             |
+      | email                 | joe@example.com |
+    And that user has the following profile:
+      | bio            |MY PROFILE|
+
+
+    # Given the user "joe"/"joe@example.com" with "password"
     When I go to the homepage
     And I follow "Sign In"
     And I fill in "joe@example.com" for "Email"
