@@ -1,0 +1,11 @@
+<h1>Edit Recipe</h1>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label :title %>
+  <%= f.text_area(:title) %>
+  <%= f.label :prep_time %>
+  <%= f.text_area(:prep_time) %>
+  <%= f.label :instructions %>
+  <%= f.text_area(:instructions) %>
+  <%= f.submit "Update Recipe" %>
+<% end %>

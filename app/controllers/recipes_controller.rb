@@ -23,10 +23,18 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def update
+    recipe = Recipe.find(params[:id])
+    recipe.update_attributes(recipe_params)
+    if recipe.save
+      redirect_to recipe_path(recipe)
+    end
+  end
+
 
 
 private
   def recipe_params
-    params.require(:recipe).permit(:title, :prep_time, :instructions, :user_id)
+    params.require(:recipe).permit(:title, :prep_time, :instructions)
   end
 end

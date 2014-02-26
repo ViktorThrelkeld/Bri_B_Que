@@ -35,7 +35,7 @@ Feature: Create a recipe
     And I should see "30 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
 
-  @focus
+  @wip
   Scenario: User can see Recipes listed on My Profile
     Given the following user:
       | username              | joe             |
@@ -55,7 +55,7 @@ Feature: Create a recipe
     Then I should be on my profile page
     And I should see "Ribs"
     And I should see "Hot Chicken"
-    When I follow "Edit"
+    And I follow "Edit"
     Then I should see "Edit Recipe"
 
 
