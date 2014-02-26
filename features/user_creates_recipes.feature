@@ -55,5 +55,7 @@ Feature: Create a recipe
     Then I should be on my profile page
     And I should see "Ribs"
     And I should see "Hot Chicken"
+    When I follow "Edit"
+    Then I should see "Edit Recipe"
 
 

@@ -5,6 +5,6 @@
 <%= link_to "New Recipe", new_recipe_path, :method=>:get%>
 
 <% @profile.user.recipes.each do |x|%>
-  <p><%= x.title %></p>
+  <p><%= link_to x.title, recipe_path(x.id) %></p>
 <%end%>
 
