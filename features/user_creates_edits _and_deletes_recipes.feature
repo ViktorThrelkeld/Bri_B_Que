@@ -35,7 +35,7 @@ Feature: Create a recipe
     And I should see "30 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
 
-  @wip
+  # @wip
   Scenario: User can see Recipes listed on My Profile
     Given the following user:
       | username              | joe             |
@@ -55,7 +55,46 @@ Feature: Create a recipe
     Then I should be on my profile page
     And I should see "Ribs"
     And I should see "Hot Chicken"
+
+  Scenario: User can edit Recipes listed on My Profile
+    Given the following user:
+      | username              | joe             |
+      | email                 | joe@example.com |
+    And that user has the following profile:
+      | bio            |MY PROFILE|
+    And that user has the following recipe:
+      |title        | Ribs|
+      |prep_time    | 5 hrs. |
+      |instructions |smoke 'em if u got 'em|
+      When I sign in
+    When I follow "My Profile"
+    Then I should be on my profile page
+    And I should see "Ribs"
     And I follow "Edit"
     Then I should see "Edit Recipe"
+    When I fill in "Hot Chicken" for "Title"
+    And I press "Update Recipe"
+    Then I should be on the show recipe page
+    And I should see "Hot Chicken"
+    And I should see "5 hrs."
 
+  @focus
+  Scenario: User can delete Recipes listed on My Profile
+    Given the following user:
+      | username              | joe             |
+      | email                 | joe@example.com |
+    And that user has the following profile:
+      | bio            |MY PROFILE|
+    And that user has the following recipe:
+      |title        | Ribs|
+      |prep_time    | 5 hrs. |
+      |instructions |smoke 'em if u got 'em|
+      When I sign in
+    When I follow "My Profile"
+    Then I should be on my profile page
+    And I should see "Ribs"
+    And I follow "Delete"
+    Then I should be on my profile page
+    And I should see "Your recipe has been deleted"
+    And I should not see "Ribs"
 
