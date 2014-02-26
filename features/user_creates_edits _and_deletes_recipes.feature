@@ -35,7 +35,6 @@ Feature: Create a recipe
     And I should see "30 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
 
-  # @wip
   Scenario: User can see Recipes listed on My Profile
     Given the following user:
       | username              | joe             |
@@ -78,7 +77,6 @@ Feature: Create a recipe
     And I should see "Hot Chicken"
     And I should see "5 hrs."
 
-  @focus
   Scenario: User can delete Recipes listed on My Profile
     Given the following user:
       | username              | joe             |
@@ -89,7 +87,7 @@ Feature: Create a recipe
       |title        | Ribs|
       |prep_time    | 5 hrs. |
       |instructions |smoke 'em if u got 'em|
-      When I sign in
+    When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
     And I should see "Ribs"
@@ -97,4 +95,3 @@ Feature: Create a recipe
     Then I should be on my profile page
     And I should see "Your recipe has been deleted"
     And I should not see "Ribs"
-
