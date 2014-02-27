@@ -20,8 +20,6 @@ Feature: Create and update profile
     And that user has the following profile:
       | bio            |MY PROFILE|
 
-
-    # Given the user "joe"/"joe@example.com" with "password"
     When I go to the homepage
     And I follow "Sign In"
     And I fill in "joe@example.com" for "Email"

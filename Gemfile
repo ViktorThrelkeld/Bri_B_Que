@@ -2,6 +2,7 @@ ruby '2.0.0'
 #ruby-gemset=Bri_B_Que
 source 'https://rubygems.org'
 
+gem "cocoon"
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 # Use jquery as the JavaScript library

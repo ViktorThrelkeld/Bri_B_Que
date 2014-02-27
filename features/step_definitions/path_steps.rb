@@ -14,6 +14,8 @@ def path_to path_descriptor
     profile_path(User.last.profile)
   when "update profile page"
     edit_profile_path(User.last.profile)
+  when "show ingredients page"
+    ingredient_path(Ingredient.last)
 
   else
     raise "Oh noes! You need to specify where this route goes in step_defintions/path_steps.rb"
