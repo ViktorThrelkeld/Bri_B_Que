@@ -1,0 +1,10 @@
+<h1>Edit Ingredients</h1>
+
+<p><%= @ingredient.name %></p>
+<p><%= @ingredient.id %></p>
+
+<%= form_for @ingredient do |f| %>
+  <%= f.label :name %>
+  <%= f.text_area(:name) %>
+  <%= f.submit "Update Ingredient" %>
+<% end %>

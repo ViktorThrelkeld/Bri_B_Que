@@ -1,3 +1,7 @@
 <h1>Show Ingredients</h1>
 <p><%= @ingredient.name %></p>
+<p><%= @ingredient.id %></p>
 
+
+<p><%= link_to "Edit", edit_ingredient_path(@ingredient) %></p>
+<p><%= button_to "Delete", ingredient_path(@ingredient), method: :delete %></p>
