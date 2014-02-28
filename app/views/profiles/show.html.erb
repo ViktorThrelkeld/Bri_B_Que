@@ -4,6 +4,7 @@
 
 <%= button_to "Update Profile", edit_profile_path(@profile), :method => :get %>
 <%= link_to "New Recipe", new_recipe_path, :method=>:get%>
+<%= link_to "New Ingredient", new_ingredient_path, :method=>:get%>
 
 <% @profile.user.recipes.each do |x|%>
   <p><%= link_to x.title, recipe_path(x.id) %></p>

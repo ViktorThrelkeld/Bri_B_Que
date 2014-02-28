@@ -14,8 +14,8 @@ Feature: Create a recipe
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
-    When I follow "New Recipe"
-    Then I should be on the create a recipe page
+    When I follow "New Ingredient"
+    Then I should be on create an ingredient page
     And I should see "Name"
     When I fill in "salt" for "Name"
     And I press "Post Ingredient"
@@ -33,8 +33,8 @@ Feature: Create a recipe
       When I sign in
       When I follow "My Profile"
       Then I should be on my profile page
-      When I follow "New Recipe"
-      Then I should be on the create a recipe page
+      When I follow "New Ingredient"
+      Then I should be on create an ingredient page
       And I should see "Name"
       When I fill in "salt" for "Name"
       And I press "Post Ingredient"
@@ -62,8 +62,8 @@ Feature: Create a recipe
       When I sign in
       When I follow "My Profile"
       Then I should be on my profile page
-      When I follow "New Recipe"
-      Then I should be on the create a recipe page
+      When I follow "New Ingredient"
+      Then I should be on create an ingredient page
       And I should see "Name"
       When I fill in "salt" for "Name"
       And I press "Post Ingredient"

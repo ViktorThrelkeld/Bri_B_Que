@@ -41,7 +41,7 @@ class IngredientsController < ApplicationController
     flash[:alert] = "Your ingredient has been deleted"
     @ingredient.destroy
 
-    redirect_to  new_recipe_path#profile_path(current_user.profile) #this is your problem, you're trying to redirect back to a show page for an ingredient you just deleted
+    redirect_to  new_ingredient_path#profile_path(current_user.profile) #this is your problem, you're trying to redirect back to a show page for an ingredient you just deleted
     # what's up with edit then?
     # edit takes you to the edit view and then the form on your edit view goes to the update action
     #try that

@@ -1,0 +1,5 @@
+<%= form_for Ingredient.new do |f| %>
+  <%= f.label :name %>
+  <%= f.text_area(:name) %>
+  <%= f.submit "Post Ingredient" %>
+<% end %>
