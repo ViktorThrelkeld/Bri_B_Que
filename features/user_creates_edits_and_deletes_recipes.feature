@@ -28,12 +28,16 @@ Feature: Create a recipe
     When I fill in "Hot Chicken" for "Title"
     And I fill in "30 min." for "Prep time"
     And I fill in "1. Fry chicken and douse in hot sauce 2. Enjoy!" for "Instructions"
+    And I fill in "1/2 cup" for "Quantity"
+    And I follow "Create new ingredient"
+    And I fill in "salt" for "Ingredient Name"
     And I press "Post Recipe"
     Then I should see "Your recipe has been posted"
     And I should be on the show recipe page
     And I should see "Hot Chicken"
     And I should see "30 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
+    And I should see "1/2 cup salt"
 
   Scenario: User can see Recipes listed on My Profile
     Given the following user:
