@@ -1,14 +1,19 @@
 <h1>Create A Recipe</h1>
-
-
-
-<%= form_for Recipe.new do |f| %>
+<%= form_for @recipe do |f| %>
   <%= f.label :title %>
   <%= f.text_area(:title) %>
   <%= f.label :prep_time %>
   <%= f.text_area(:prep_time) %>
   <%= f.label :instructions %>
   <%= f.text_area(:instructions) %>
+  <fieldset id="ingredients">
+    <%= f.fields_for :recipeingredients do |recipe_ingredient| %>
+      <%= render "recipeingredient_fields", :f => recipe_ingredient %>
+    <% end %>
+  </fieldset>
+  <div class = "links">
+    <%= link_to_add_association 'add ingredient', f, :recipeingredients %>
+  </div>
   <%= f.submit "Post Recipe" %>
 <% end %>
 
