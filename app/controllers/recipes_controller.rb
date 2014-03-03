@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     # @recipe.attributes = recipe_params
-    prepare_recipe
+
   end
 
   def edit

@@ -7,13 +7,15 @@
   <%= f.label :instructions %>
   <%= f.text_area(:instructions) %>
   <fieldset id="ingredients">
-    <%= f.fields_for :recipeingredients do |recipe_ingredient| %>
-      <%= render "recipeingredient_fields", :f => recipe_ingredient %>
-    <% end %>
+    <div>
+      <%= f.fields_for :recipeingredients do |recipe_ingredient| %>
+        <%= render "recipeingredient_fields", :f => recipe_ingredient %>
+      <% end %>
+    </div>
+    <div class = "links">
+      <%= link_to_add_association 'add ingredient', f, :recipeingredients %>
+    </div>
   </fieldset>
-  <div class = "links">
-    <%= link_to_add_association 'add ingredient', f, :recipeingredients %>
-  </div>
   <%= f.submit "Post Recipe" %>
 <% end %>
 
