@@ -1,5 +1,13 @@
 class RecipesController < ApplicationController
 
+  def index
+    @recipes = Recipe.search(params[:search])
+  end
+
+  # def search
+  #   @recipes = Recipe.search params[:search]
+  # end
+
   def new
     @recipe = Recipe.new
     @recipe.recipeingredients.build #initialize recipe -> recipe_ingredients association
@@ -43,6 +51,12 @@ class RecipesController < ApplicationController
     flash[:alert] = "Your recipe has been deleted"
 
     redirect_to  profile_path(current_user.profile)
+  end
+
+  def search
+  term = params[:search]
+  ingredient = Ingredient.where(:name => term)
+  @recipes = Ingredient.find(ingredient).recipes
   end
 
 
