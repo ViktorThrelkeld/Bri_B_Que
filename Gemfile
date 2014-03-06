@@ -6,6 +6,7 @@ gem "cocoon"
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 # Use jquery as the JavaScript library
+gem 'foundation-rails'
 gem 'haml'
 gem 'jquery-rails'
 gem 'pg'
