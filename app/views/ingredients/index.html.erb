@@ -1,0 +1,8 @@
+<ul>
+    <% @ingredients.each do |ingredient| %>
+  <li><%= link_to ingredient,
+    :action => 'show', :id => ingredient.id  %></li>
+  <% end %>
+</ul>
+
+
