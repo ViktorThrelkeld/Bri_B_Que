@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
 
   def index
-
+    @ingredients = Ingredient.search(params[:search])
   end
 
   def new
@@ -40,14 +40,8 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     flash[:alert] = "Your ingredient has been deleted"
     @ingredient.destroy
-
-    redirect_to  new_ingredient_path#profile_path(current_user.profile) #this is your problem, you're trying to redirect back to a show page for an ingredient you just deleted
-    # what's up with edit then?
-    # edit takes you to the edit view and then the form on your edit view goes to the update action
-    #try that
+    redirect_to  new_ingredient_path
   end
-
-
 private
   def ingredient_params
     params.require(:ingredient).permit(:name)

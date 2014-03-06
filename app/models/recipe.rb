@@ -7,10 +7,11 @@ class Recipe < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
-      # find(:all, :conditions => ['title LIKE ? OR description LIKE ?', search_condition, search_condition])
+      recipes = Recipe.find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+      # recipes += Ingredient.find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
     else
       find(:all)
+
     end
   end
 end

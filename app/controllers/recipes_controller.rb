@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.search(params[:search])
+    # ingredient = Ingredient.where(:name => @recipes)
   end
 
   # def search
@@ -29,6 +30,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    # @ingredients = Ingredient.find(params[:search])
     # @recipe.attributes = recipe_params
 
   end
@@ -53,11 +55,11 @@ class RecipesController < ApplicationController
     redirect_to  profile_path(current_user.profile)
   end
 
-  def search
-  term = params[:search]
-  ingredient = Ingredient.where(:name => term)
-  @recipes = Ingredient.find(ingredient).recipes
-  end
+  # def search
+  # term = params[:search]
+  # ingredient = Ingredient.where(:name => term)
+  # @recipes = Ingredient.find(ingredient).recipes
+  # end
 
 
 private
