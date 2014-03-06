@@ -17,12 +17,8 @@
   <%= link_to_function "Clear", "$('search_field').clear()" %>
 <% end %>
 
-
-
-
 <% @profile.user.recipes.each do |x|%>
   <p><%= link_to x.title, recipe_path(x.id) %></p>
   <p><%= link_to "Edit", edit_recipe_path(x.id) %></p>
   <p><%= link_to "Delete", recipe_path(x.id), method: :delete, data: {id: x.id } %></p>
 <%end%>
-
