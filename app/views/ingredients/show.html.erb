@@ -1,7 +1,17 @@
-<h1>Show Ingredients</h1>
-<p><%= @ingredient.name %></p>
-<p><%= @ingredient.id %></p>
+<!--  -->
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Recipe By Ingredient</h1>
 
+    <p><%= @recipe.title %></p>
+    <p><%= @recipe.prep_time %></p>
+    <p><%= @recipe.instructions %></p>
 
-<p><%= link_to "Edit", edit_ingredient_path(@ingredient) %></p>
-<p><%= button_to "Delete", ingredient_path(@ingredient), method: :delete %></p>
+    <% @recipe.recipeingredients.each do |recipeingredient| %>
+      <p><%= recipeingredient.quantity %> <%= recipeingredient.ingredient.name %></p>
+    <% end %>
+
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <p><%= link_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id } %></p>
+  </div>
+</div>

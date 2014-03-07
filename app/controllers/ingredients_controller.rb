@@ -1,7 +1,14 @@
 class IngredientsController < ApplicationController
 
   def index
-    @ingredients = Ingredient.search(params[:search])
+    # @ingredients = Ingredient.search(params[:search])
+    ingredient = Ingredient.find_by(name: params[:search])
+    recipe_ingredients = Recipeingredient.where(ingredient_id: ingredient.id)
+    recipes = []
+    recipe_ingredients.each do |recipe|
+      recipes << Recipe.find_by(id: recipe.recipe_id)
+    end
+    @ingredients = recipes
   end
 
   def new
@@ -19,7 +26,8 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    @ingredient = Ingredient.find(params[:id])
+    # @ingredient = Ingredient.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def edit
