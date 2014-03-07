@@ -1,0 +1,12 @@
+.row
+  .small-12.columns
+    %h2 Create A Profile
+.row
+  .small-12.medium-6.columns
+    .panel
+      = form_for Profile.new do |f|
+        .inputs
+          = f.label :bio
+          = f.text_area(:bio)
+        .actions
+          = f.submit "Create Profile"
