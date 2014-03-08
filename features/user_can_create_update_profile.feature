@@ -1,4 +1,4 @@
-
+@focus
 Feature: Create and update profile
   In order to share and compare recipes
   As a Barbeque enthusiast
@@ -9,9 +9,13 @@ Feature: Create and update profile
     Then I should be on the create a profile page
     Then I should see "Create A Profile"
     And I fill in "BBQ Ambassador. Walks On the Beach." for "Bio"
+    And I fill in "smalltown, IN" for "Hometown"
+    And I fill in "45" for "Age"
     And I press "Create Profile"
     Then I should see "Your Profile"
     And I should see "BBQ Ambassador"
+    And I should see "smalltown, IN"
+    And I should see "45"
 
   Scenario: User edits profile
     Given the following user:
@@ -19,7 +23,8 @@ Feature: Create and update profile
       | email                 | joe@example.com |
     And that user has the following profile:
       | bio            |MY PROFILE|
-
+      |hometown | Nashville,TN |
+      |age | 35 |
     When I go to the homepage
     And I follow "Sign In"
     And I fill in "joe@example.com" for "Email"
@@ -37,4 +42,5 @@ Feature: Create and update profile
     And I press "Update Profile"
     Then I should see "My Profile"
     And I should see "Backyard Smoker"
-
+    And I should see "Nashville,TN"
+    And I should see "35"

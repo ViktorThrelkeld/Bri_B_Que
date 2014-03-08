@@ -1,4 +1,4 @@
-@focus
+@wip
 Feature: Create a recipe
   In order to share and compare recipes
   As a Barbeque enthusiast
@@ -11,6 +11,8 @@ Feature: Create a recipe
       | email                 | joe@example.com |
     And that user has the following profile:
       | bio            |MY PROFILE|
+      |hometown | smalltown, IN |
+      |age | 25 |
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
@@ -30,6 +32,8 @@ Feature: Create a recipe
       | email                 | joe@example.com |
     And that user has the following profile:
       | bio            |MY PROFILE|
+      |hometown | smalltown, IN |
+      |age | 25 |
       When I sign in
       When I follow "My Profile"
       Then I should be on my profile page
@@ -57,6 +61,8 @@ Feature: Create a recipe
       | email                 | joe@example.com |
     And that user has the following profile:
       | bio            |MY PROFILE|
+      |hometown | smalltown, IN |
+      |age | 25 |
     # And that user has the following ingredient:
     #   |name   | salt |
       When I sign in

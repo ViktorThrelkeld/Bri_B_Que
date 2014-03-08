@@ -7,4 +7,8 @@
       = form_for @profile do |f|
         = f.label :bio
         = f.text_area(:bio)
+        = f.label :hometown
+        = f.text_area(:hometown)
+        = f.label :age
+        = f.text_area(:age)
         = f.submit "Update Profile"

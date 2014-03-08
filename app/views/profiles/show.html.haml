@@ -6,6 +6,8 @@
     .panel
       %p= current_user.username
       %p= @profile.bio
+      %p= @profile.hometown
+      %p= @profile.age
       = button_to "Update Profile", edit_profile_path(@profile), :method => :get
   .small-6.columns
     .panel

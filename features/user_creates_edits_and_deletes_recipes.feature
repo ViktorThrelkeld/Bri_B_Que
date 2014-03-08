@@ -20,6 +20,8 @@ Feature: Create a recipe
       | email                 | joe@example.com |
     And that user has the following profile:
       | bio            |MY PROFILE|
+      |hometown | smalltown, IN |
+      |age | 25 |
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
@@ -51,6 +53,8 @@ Feature: Create a recipe
       | email                 | joe@example.com |
     And that user has the following profile:
       | bio            |MY PROFILE|
+      |hometown | smalltown, IN |
+      |age | 25 |
     And that user has the following recipe:
       |title        | Ribs|
       |prep_time    | 1 hrs. |
@@ -84,6 +88,8 @@ Feature: Create a recipe
       | email                 | joe@example.com |
     And that user has the following profile:
       | bio            |MY PROFILE|
+      |hometown | smalltown, IN |
+      |age | 25 |
     And that user has the following recipe:
       |title        | Ribs|
       |prep_time    | 5 hrs. |
@@ -109,6 +115,8 @@ Feature: Create a recipe
       | email                 | joe@example.com |
     And that user has the following profile:
       | bio            |MY PROFILE|
+      |hometown | smalltown, IN |
+      |age | 25 |
     And that user has the following recipe:
       |title        | Ribs|
       |prep_time    | 5 hrs. |
