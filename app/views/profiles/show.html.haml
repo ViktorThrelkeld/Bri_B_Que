@@ -1,0 +1,32 @@
+.row
+  .small-12.columns
+    %h1 Your Profile
+.row
+  .small-6.columns
+    .panel
+      %p= current_user.username
+      %p= @profile.bio
+      = button_to "Update Profile", edit_profile_path(@profile), :method => :get
+  .small-6.columns
+    .panel
+      = link_to "New Recipe", new_recipe_path, :method=>:get
+.row
+  .small-6.columns
+    .panel
+      = form_tag recipes_path, :method => 'get' do
+        = text_field_tag :search, params[:search], :id => 'search_field'
+        = submit_tag "Search Recipe Titles", :name => nil
+        = link_to_function "Clear", "$('search_field').clear()"
+      = form_tag ingredients_path, :method => 'get' do
+        = text_field_tag :search, params[:search], :id => 'search_field'
+        = submit_tag "Search By Ingredients", :name => nil
+        = link_to_function "Clear", "$('search_field').clear()"
+.row
+  .small-6.columns
+    .panel
+      - @profile.user.recipes.each do |x|
+        .inine-list
+        = link_to x.title, recipe_path(x.id)
+        = link_to "Edit", edit_recipe_path(x.id)
+        = link_to "Delete", recipe_path(x.id), method: :delete, data: {id: x.id }
+
