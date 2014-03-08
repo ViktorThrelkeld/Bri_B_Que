@@ -1,0 +1,19 @@
+Hello There!
+.row
+  .large-12.columns
+    %h1 Random Recipe
+    %p= @recipe.title
+    %p= @recipe.prep_time
+    .subheader
+      Ingredients:
+    .panel
+      - @recipe.recipeingredients.each do |recipeingredient|
+        %p
+          = recipeingredient.quantity
+          = recipeingredient.ingredient.name
+    .subheader
+      Instructions:
+    .panel
+      %p= @recipe.instructions
+    = link_to "Edit", edit_recipe_path(@recipe)
+    %p= link_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id }
