@@ -38,7 +38,7 @@ Feature: Create a recipe
     And I should see "30 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
     And I should see "1/2 cup salt"
-
+  @focus
   Scenario: User can see Recipes listed on My Profile
     Given the following user:
       | username              | joe             |
@@ -47,17 +47,30 @@ Feature: Create a recipe
       | bio            |MY PROFILE|
     And that user has the following recipe:
       |title        | Ribs|
-      |prep_time    | 5 hrs. |
+      |prep_time    | 1 hrs. |
+      |cook_time    | 5 hrs  |
+      |description  | delicious |
+      |servings     | 3 |
       |instructions |smoke 'em if u got 'em|
       And that user has the following recipe:
       |title        | Hot Chicken|
       |prep_time    | 30 min.    |
       |instructions |Fry and eat |
+      |cook_time    | 10 min hrs  |
+      |description  | delicious |
+      |servings     | 3 |
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
     And I should see "Ribs"
     And I should see "Hot Chicken"
+    When I follow "Hot Chicken"
+    Then I should see "Hot Chicken"
+    And I should see "Fry and eat"
+    And I should see "30 min"
+    And I should see "10 min"
+    And I should see "delicious"
+    And I should see "3"
 
   Scenario: User can edit Recipes listed on My Profile
     Given the following user:
@@ -69,6 +82,9 @@ Feature: Create a recipe
       |title        | Ribs|
       |prep_time    | 5 hrs. |
       |instructions |smoke 'em if u got 'em|
+      |cook_time    | 5 hrs  |
+      |description  | delicious |
+      |servings     | 3 |
       When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
@@ -91,6 +107,9 @@ Feature: Create a recipe
       |title        | Ribs|
       |prep_time    | 5 hrs. |
       |instructions |smoke 'em if u got 'em|
+      |cook_time    | 5 hrs  |
+      |description  | delicious |
+      |servings     | 3 |
     When I sign in
     When I follow "My Profile"
     Then I should be on my profile page

@@ -71,7 +71,10 @@ private
     params.require(:recipe).permit(
       :title,
       :prep_time,
+      :cook_time,
       :instructions,
+      :description,
+      :servings,
       :recipeingredients_attributes => [
         :id,
         :quantity,
