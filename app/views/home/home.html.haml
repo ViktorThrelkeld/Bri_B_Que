@@ -15,5 +15,6 @@ Hello There!
       Instructions:
     .panel
       %p= @recipe.instructions
-    = link_to "Edit", edit_recipe_path(@recipe)
-    %p= link_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id }
+    -if current_user
+      = link_to "Edit", edit_recipe_path(@recipe)
+      = link_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id }
