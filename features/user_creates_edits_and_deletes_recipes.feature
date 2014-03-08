@@ -13,7 +13,7 @@ Feature: Create a recipe
     Then I should see "Create A Recipe"
     When I press "Post Recipe"
     Then I should see "Your fields can't be blank"
-  @wip
+  @focus
   Scenario: User can create a recipe with a title, prep time and instructions succeeds
     Given the following user:
       | username              | joe             |

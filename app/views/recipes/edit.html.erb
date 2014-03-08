@@ -1,21 +1,35 @@
-<h1>Edit Recipe</h1>
+<div class="row">
+  <div class="small-12  columns">
+    <h1>Edit Recipe</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12  columns">
+    <%= form_for @recipe do |f| %>
+      <%= f.label :title %>
+      <%= f.text_area(:title) %>
+      <%= f.label :description %>
+      <%= f.text_area(:description) %>
+      <%= f.label :servings %>
+      <%= f.text_area(:servings) %>
+      <%= f.label :prep_time %>
+      <%= f.text_area(:prep_time) %>
+      <%= f.label :cook_time %>
+      <%= f.text_area(:cook_time) %>
+      <%= f.label :instructions %>
+      <%= f.text_area(:instructions) %>
+      <fieldset id="ingredients">
+        <div>
+          <%= f.fields_for :recipeingredients do |recipe_ingredient| %>
+              <%= render "edit_recipeingredient_fields", :f => recipe_ingredient %>
+          <% end %>
+        </div>
+        <div class = "links">
+          <%= link_to_add_association 'add ingredient', f, :recipeingredients %>
+        </div>
+      </fieldset>
+      <%= f.submit "Update Recipe" %>
+  </div>
+</div>
 
-<%= form_for @recipe do |f| %>
-  <%= f.label :title %>
-  <%= f.text_area(:title) %>
-  <%= f.label :prep_time %>
-  <%= f.text_area(:prep_time) %>
-  <%= f.label :instructions %>
-  <%= f.text_area(:instructions) %>
-  <fieldset id="ingredients">
-    <div>
-      <%= f.fields_for :recipeingredients do |recipe_ingredient| %>
-          <%= render "edit_recipeingredient_fields", :f => recipe_ingredient %>
-      <% end %>
-    </div>
-    <div class = "links">
-      <%= link_to_add_association 'add ingredient', f, :recipeingredients %>
-    </div>
-  </fieldset>
-  <%= f.submit "Update Recipe" %>
 <% end %>

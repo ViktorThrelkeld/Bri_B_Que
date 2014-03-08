@@ -1,4 +1,4 @@
-@focus
+
 Feature: Create and update profile
   In order to share and compare recipes
   As a Barbeque enthusiast
