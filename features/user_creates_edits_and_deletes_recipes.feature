@@ -13,7 +13,7 @@ Feature: Create a recipe
     Then I should see "Create A Recipe"
     When I press "Post Recipe"
     Then I should see "Your fields can't be blank"
-
+  @wip
   Scenario: User can create a recipe with a title, prep time and instructions succeeds
     Given the following user:
       | username              | joe             |
@@ -26,19 +26,25 @@ Feature: Create a recipe
     When I follow "New Recipe"
     Then I should be on the create a recipe page
     When I fill in "Hot Chicken" for "Title"
+    And I fill in "yum" for "Description"
+    And I fill in "2" for "Servings"
     And I fill in "30 min." for "Prep time"
+    And I fill in "10 min." for "Cook time"
     And I fill in "1. Fry chicken and douse in hot sauce 2. Enjoy!" for "Instructions"
     And I fill in "1/2 cup" for "Quantity"
     And I follow "Create new ingredient"
-    And I fill in "salt" for "Ingredient Name"
+    And I fill in "salt" for "Ingredient name"
     And I press "Post Recipe"
     Then I should see "Your recipe has been posted"
     And I should be on the show recipe page
     And I should see "Hot Chicken"
+    And I should see "yum"
+    And I should see "2"
     And I should see "30 min."
+    And I should see "10 min."
     And I should see "1. Fry chicken and douse in hot sauce 2. Enjoy!"
     And I should see "1/2 cup salt"
-  @focus
+
   Scenario: User can see Recipes listed on My Profile
     Given the following user:
       | username              | joe             |
