@@ -1,22 +1,19 @@
 .row
   .large-12.columns
-    %h1 Random Recipe
-    .subheader
-      recipe by
-    %p= @recipe.user.username
-    %p= @recipe.title
-    %p= @recipe.prep_time
-    .subheader
-      Ingredients:
-    .panel
-      - @recipe.recipeingredients.each do |recipeingredient|
-        %p
-          = recipeingredient.quantity
-          = recipeingredient.ingredient.name
-    .subheader
-      Instructions:
-    .panel
-      %p= @recipe.instructions
-    / -if @recipe.user.username == current_user.username
-    /   = link_to "Edit", edit_recipe_path(@recipe)
-    /   = link_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id }
+    %h1 Home page/Random Recipe
+    / .subheader
+    /   recipe by
+    / %p= @recipe.user.username
+    / %p= @recipe.title
+    / %p= @recipe.prep_time
+    / .subheader
+    /   Ingredients:
+    / .panel
+    /   - @recipe.recipeingredients.each do |recipeingredient|
+    /     %p
+    /       = recipeingredient.quantity
+    /       = recipeingredient.ingredient.name
+    / .subheader
+    /   Instructions:
+    / .panel
+    /   %p= @recipe.instructions
