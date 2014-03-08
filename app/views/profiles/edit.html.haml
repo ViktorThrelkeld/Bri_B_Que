@@ -1,0 +1,10 @@
+.row
+  .small-12.columns
+    %h1 Update Profile
+.row
+  .small-12.medium-6.columns
+    .panel
+      = form_for @profile do |f|
+        = f.label :bio
+        = f.text_area(:bio)
+        = f.submit "Update Profile"
