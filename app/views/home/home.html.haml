@@ -1,19 +1,20 @@
 .row
   .large-12.columns
-    %h1 Home page/Random Recipe
-    / .subheader
-    /   recipe by
-    / %p= @recipe.user.username
-    / %p= @recipe.title
-    / %p= @recipe.prep_time
-    / .subheader
-    /   Ingredients:
-    / .panel
-    /   - @recipe.recipeingredients.each do |recipeingredient|
-    /     %p
-    /       = recipeingredient.quantity
-    /       = recipeingredient.ingredient.name
-    / .subheader
-    /   Instructions:
-    / .panel
-    /   %p= @recipe.instructions
+    - if @recipe.present?
+      %h1 Home page/Random Recipe
+      .subheader
+        recipe by
+      %p= @recipe.user.username
+      %p= @recipe.title
+      %p= @recipe.prep_time
+      .subheader
+        Ingredients:
+      .panel
+        - @recipe.recipeingredients.each do |recipeingredient|
+          %p
+            = recipeingredient.quantity
+            = recipeingredient.ingredient.name
+      .subheader
+        Instructions:
+      .panel
+        %p= @recipe.instructions
