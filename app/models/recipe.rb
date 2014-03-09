@@ -3,7 +3,7 @@ class Recipe < ActiveRecord::Base
   has_many :recipeingredients, dependent: :destroy
   has_many :ingredients, :through => :recipeingredients
   accepts_nested_attributes_for :ingredients #:reject_if => :all_blank#, :reject_if => lambda { |a| a[:content].blank?  }#, :allow_destroy => true
-  accepts_nested_attributes_for :recipeingredients
+  accepts_nested_attributes_for :recipeingredients, allow_destroy: true
 
   def self.search(search)
     if search
