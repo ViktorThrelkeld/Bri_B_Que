@@ -1,11 +1,15 @@
 .row
   .large-12.columns
     %h1 Show Recipe
+    .fieldset
+      .legend
+        recipe by
+
+        %p= @recipe.user.username
     .subheader
-      recipe by
-    %p= @recipe.user.username
+      recipe title:
     %p= @recipe.title
-    %p= @recipe.description
+    %blockquote= @recipe.description
     %p= @recipe.servings
     %p= @recipe.prep_time
     %p= @recipe.cook_time
