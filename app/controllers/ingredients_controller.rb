@@ -2,13 +2,11 @@ class IngredientsController < ApplicationController
 
   def index
     # @ingredients = Ingredient.search(params[:search])
-    ingredient = Ingredient.find_by(name: params[:search])
-    recipe_ingredients = Recipeingredient.where(ingredient_id: ingredient.id)
-    recipes = []
-    recipe_ingredients.each do |recipe|
-      recipes << Recipe.find_by(id: recipe.recipe_id)
+    ingredients = Ingredient.search(params[:search])
+    recipes = ingredients.each_with_object([]) do |ingredient, array|
+      array << ingredient.recipes
     end
-    @ingredients = recipes
+    @recipes = recipes.flatten
   end
 
   def new

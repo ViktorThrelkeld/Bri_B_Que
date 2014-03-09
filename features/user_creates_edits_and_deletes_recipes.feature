@@ -14,6 +14,7 @@ Feature: Create a recipe
     When I press "Post Recipe"
     Then I should see "Your fields can't be blank"
   @focus
+  @javascript
   Scenario: User can create a recipe with a title, prep time and instructions succeeds
     Given the following user:
       | username              | joe             |
@@ -101,7 +102,7 @@ Feature: Create a recipe
     When I follow "My Profile"
     Then I should be on my profile page
     And I should see "Ribs"
-    And I follow "Edit"
+    And I press "Edit"
     Then I should see "Edit Recipe"
     When I fill in "Hot Chicken" for "Title"
     And I press "Update Recipe"
@@ -128,7 +129,7 @@ Feature: Create a recipe
     When I follow "My Profile"
     Then I should be on my profile page
     And I should see "Ribs"
-    And I follow "Delete"
+    And I press "Delete"
     Then I should be on my profile page
     And I should see "Your recipe has been deleted"
     And I should not see "Ribs"

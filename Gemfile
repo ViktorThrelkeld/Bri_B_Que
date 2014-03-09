@@ -43,5 +43,5 @@ group :test do
   gem 'email_spec'
   gem 'launchy'
   gem 'poltergeist'
-  gem 'webmock'
+  gem 'selenium-webdriver'
 end
