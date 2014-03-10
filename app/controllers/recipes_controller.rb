@@ -6,8 +6,8 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @recipe.recipeingredients.build #initialize recipe -> recipe_ingredients association
-    @recipe.recipeingredients.last.build_ingredient #initialize recipe_ingredients -> ingredient association
+    @recipe.recipeingredients.build
+    @recipe.recipeingredients.last.build_ingredient
     @recipeingredient = Recipeingredient.new
   end
 
