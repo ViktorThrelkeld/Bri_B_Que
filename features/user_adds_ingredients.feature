@@ -51,10 +51,6 @@ Feature: Create a recipe
       # Then I should be on show ingredients page
       # And I should see "pepper"
 
-
-
-
-
   Scenario: User can delete ingredients
     Given the following user:
       | username              | joe             |

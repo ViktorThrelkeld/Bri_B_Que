@@ -1,9 +1,3 @@
-# When(/^I go to "(.*?)"$/) do |page|
-#   visit
-# end
-
-
-
 Then(/^I should see "(.*?)"$/) do |text|
   page.should have_content(text)
 end
@@ -35,12 +29,6 @@ Given(/^the user "(.*?)"\/"(.*?)" with "(.*?)"$/) do |username, email, password|
   user.create_profile(bio: "MY PROFILE!!!!!!")
 end
 
-# Given(/^the user "(.*?)" with "(.*?)"$/) do |arg1, arg2|
-#   pending # express the regexp above with the code you wish you had
-# end
-
-
-
 Given(/^I'm signed in as "(.*?)"$/) do |username|
   Fabricate(:user, username: username)
   visit new_user_session_path
@@ -49,8 +37,6 @@ Given(/^I'm signed in as "(.*?)"$/) do |username|
   click_button "Sign in"
   page.should have_content("Signed in successfully")
 end
-
-
 
 When(/^I sign up$/) do
   steps %Q{
@@ -74,7 +60,3 @@ When(/^I sign in$/) do
     And I press "Sign in"
    }
 end
-
-
-
-

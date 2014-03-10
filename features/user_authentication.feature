@@ -23,7 +23,6 @@ Feature: User authentication
     Then I should not see "Sign Out"
     And I should see "Sign In"
 
-
   Scenario: Confirm that signing up with username lets you log in with username
     When I go to the homepage
     And I follow "Sign Up"
@@ -44,7 +43,6 @@ Feature: User authentication
     Given the following user:
       | username              | joe             |
       | email                 | joe@example.com |
-    # Given the user "joe"/"joe@example.com" with "password"
     When I go to the homepage
     And I follow "Sign In"
     And I fill in "joe@example.com" for "Email / Username"
@@ -61,7 +59,6 @@ Feature: User authentication
     Given the following user:
       | username              | joe             |
       | email                 | joe@example.com |
-    # Given the user "joe"/"joe@example.com" with "password"
     When I go to the homepage
     And I follow "Sign In"
     And I fill in "joe" for "Email / Username"
