@@ -1,5 +1,12 @@
-<ul>
-    <% @recipes.each do |recipe| %>
-  <li><%= link_to recipe.title, recipe_path(recipe) %></li>
-  <% end %>
-</ul>
+<h1>Search Results</h1>
+<% if @recipes.any? %>
+  <ul>
+      <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.title, recipe_path(recipe) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Search returned no results.</p>
+  <%= link_to 'Back', :back %>
+<% end %>
+
