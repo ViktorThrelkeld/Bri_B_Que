@@ -1,7 +1,6 @@
 class IngredientsController < ApplicationController
 
   def index
-    # @ingredients = Ingredient.search(params[:search])
     ingredients = Ingredient.search(params[:search])
     recipes = ingredients.each_with_object([]) do |ingredient, array|
       array << ingredient.recipes
@@ -24,7 +23,6 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    # @ingredient = Ingredient.find(params[:id])
     @recipe = Recipe.find(params[:id])
   end
 
