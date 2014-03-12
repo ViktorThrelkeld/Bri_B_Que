@@ -9,7 +9,7 @@ BriBQue::Application.routes.draw do
   resources :profiles
   resources :recipes
   resources :ingredients
-  # get '/recipes/random' => 'recipes#random'
+  match '/recipe/random' => 'recipes#random', via: [:get]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
