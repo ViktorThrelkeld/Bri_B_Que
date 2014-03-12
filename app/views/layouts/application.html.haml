@@ -18,6 +18,7 @@
               %h1#title Bri-B-Que
         %section.top-bar-section
           %ul.right
+            = link_to "Home", root_path
             - if current_user
               = link_to "Sign Out", destroy_user_session_path, method: :delete
               = link_to "My Profile", profile_path(current_user.profile) if current_user.profile

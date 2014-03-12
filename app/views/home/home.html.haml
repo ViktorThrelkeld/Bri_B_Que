@@ -1,34 +1,36 @@
 .row
-  .small-1.columns
-    =image_tag "ribs.png", id: 'ribs'
-.row
   .small-6.columns
     .panel
       = form_tag recipes_path, :method => 'get' do
         = text_field_tag :search, params[:search], :id => 'search_field'
         = submit_tag "Search Recipe Titles", :name => nil
         = link_to_function "Clear", "$('search_field').clear()"
+  .small-6.columns
+    .panel
       = form_tag ingredients_path, :method => 'get' do
         = text_field_tag :search, params[:search], :id => 'search_field'
         = submit_tag "Search By Ingredients", :name => nil
         = link_to_function "Clear", "$('search_field').clear()"
 .row
-  .large-12.columns
-    - if @recipe.present?
-      %h1 Home page/Random Recipe
-      .subheader
-        recipe by
-      %p= @recipe.user.username
-      %p= @recipe.title
-      %p= @recipe.prep_time
-      .subheader
-        Ingredients:
-      .panel
-        - @recipe.recipeingredients.each do |recipeingredient|
-          %p
-            = recipeingredient.quantity
-            = recipeingredient.ingredient.name
-      .subheader
-        Instructions:
-      .panel
-        %p= @recipe.instructions
+  =image_tag "picnic.png", id: 'picnic'
+
+/ .row
+/   .large-12.columns
+/     - if @recipe.present?
+/       %h1 Random Recipe
+/       .subheader
+/         recipe by
+/       %p= @recipe.user.username
+/       %p= @recipe.title
+/       %p= @recipe.prep_time
+/       .subheader
+/         Ingredients:
+/       .panel
+/         - @recipe.recipeingredients.each do |recipeingredient|
+/           %p
+/             = recipeingredient.quantity
+/             = recipeingredient.ingredient.name
+/       .subheader
+/         Instructions:
+/       .panel
+/         %p= @recipe.instructions
