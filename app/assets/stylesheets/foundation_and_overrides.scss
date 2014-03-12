@@ -1282,3 +1282,30 @@ background-attachment: fixed;
   border-bottom-left-radius:36px;
   border-bottom-right-radius:36px;
 }
+
+.subheader{
+  display: inline-block;
+}
+
+.recipe_button{
+  position: relative;
+  bottom: 8px;
+
+  margin-right: 10px;
+  float: right;
+}
+.button{
+  color: black;
+  display: inline;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+textarea.vert{
+  resize:vertical;
+}
+
+.contain-to-grid .top-bar{margin-bottom: 20px;}

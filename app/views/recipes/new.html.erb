@@ -1,34 +1,47 @@
 <div class="row">
+  <div class="small-1  columns">
+    <%=image_tag "bacon.png", id: 'bacon' %>
+  </div>
+</div>
+<div class="row">
   <div class="small-12  columns">
     <h1>Create A Recipe</h1>
   </div>
 </div>
-
 <div class="row">
-  <div class="small-12  columns">
+  <div class="small-12 columns">
     <%= form_for @recipe do |f| %>
       <%= f.label :title %>
       <%= f.text_area(:title) %>
       <%= f.label :description %>
       <%= f.text_area(:description) %>
+      <%= f.label :instructions %>
+      <%= f.text_area(:instructions) %>
+<div class="row">
+  <div class="small-4 columns">
       <%= f.label :servings %>
       <%= f.text_area(:servings) %>
       <%= f.label :prep_time %>
       <%= f.text_area(:prep_time) %>
       <%= f.label :cook_time %>
       <%= f.text_area(:cook_time) %>
-      <%= f.label :instructions %>
-      <%= f.text_area(:instructions) %>
+
+  </div>
+
+  <div class="small-4  columns">
     <fieldset id="ingredients">
        <%= f.fields_for :recipeingredients do |recipe_ingredient| %>
          <%= render "recipeingredient_fields", :f => recipe_ingredient %>
        <% end %>
 
      <div class = "links">
-       <%= link_to_add_association 'add ingredient', f, :recipeingredients %>
+       <%= link_to_add_association 'Add Another Ingredient Field', f, :recipeingredients %>
      </div>
      </fieldset>
-     <%= f.submit "Post Recipe" %>
- </div>
+     <%= f.submit "Post Recipe", class: 'button tiny radius' %>
+
+  </div>
+  <div class="small-4  columns">
+  </div>
 </div>
 <% end %>

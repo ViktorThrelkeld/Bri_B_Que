@@ -3,9 +3,9 @@
     <%= f.label :quantity %>
     <%= f.text_field :quantity, size: "10" %>
     <%= f.select :ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :name), :prompt => "Choose an ingredient" %>
-    <%= link_to_remove_association("Remove field", f,{ wrapper_class: 'ingredient-wrapper' }) %>
+    <%= link_to_remove_association("Remove Ingredient Field", f,{ wrapper_class: 'ingredient-wrapper' }) %>
   </div>
   <div>
-    <%= link_to_add_association "Create new ingredient", f, :ingredient %>
+    <%= link_to_add_association "Create A New Ingredient", f, :ingredient %>
   </div>
 </div>

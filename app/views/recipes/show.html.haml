@@ -35,8 +35,8 @@
     .subheader
       Instructions:
     .panel
-      %p= @recipe.instructions
+      %textarea= @recipe.instructions
 
     -if @recipe.user == current_user
-      = button_to "Edit", edit_recipe_path(@recipe), method: :get, class: 'button tiny radius'
-      = button_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id }, class: 'button tiny radius'
+      = link_to "Edit", edit_recipe_path(@recipe), method: :get, class: 'button tiny radius'
+      = link_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id }, class: 'button tiny radius'
