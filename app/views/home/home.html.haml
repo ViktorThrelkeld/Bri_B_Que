@@ -3,7 +3,7 @@
     / .panel
     = form_tag recipes_path, :method => 'get' do
       = text_field_tag :search, params[:search], :id => 'search_field'
-      = submit_tag "Search Recipe Titles", :name => nil
+      = submit_tag "Search By Recipe Title", :name => nil
       / = link_to_function "Clear", "$('search_field').clear()"
   .small-3.columns
     / .panel
