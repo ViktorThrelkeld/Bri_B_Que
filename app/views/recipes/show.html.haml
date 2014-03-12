@@ -1,26 +1,35 @@
 .row
+  .small-1.columns
+    =image_tag "bacon.png", id: 'bacon'
+.row
   .small-12.columns
     %h1= @recipe.title
 .row
   .small-6.columns
     .panel
-      .subheader
-        recipe by
-      %p= link_to "#{@recipe.user.username}", profile_path(@recipe.user.profile)
-      .subheader
-        Description:
-      %p= @recipe.description
+      %ul
+        %li
+          .subheader
+            recipe by
+          %span= link_to "#{@recipe.user.username}", profile_path(@recipe.user.profile)
+        %li
+          .subheader
+            Description:
+          %span= @recipe.description
   .small-6.columns
     .panel
-      .subheader
-        Servings:
-      %p= @recipe.servings
-      .subheader
-        Prep time:
-      %p= @recipe.prep_time
-      .subheader
-        Cook time:
-      %p= @recipe.cook_time
+      %ul
+        %li
+          .subheader
+            Servings:
+          %span= @recipe.servings
+        %li
+          .subheader
+            Prep time:
+          %span= @recipe.prep_time
+          .subheader
+            Cook time:
+          %span= @recipe.cook_time
 .row
   .large-6.columns
     .subheader
