@@ -5,13 +5,15 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :ingredients #:reject_if => :all_blank#, :reject_if => lambda { |a| a[:content].blank?  }#, :allow_destroy => true
   accepts_nested_attributes_for :recipeingredients, allow_destroy: true
 
+  # def self.random
+  #   @recipe = Recipe.offset(rand(Recipe.count)).first
+  # end
+
   def self.search(search)
     if search
       recipes = Recipe.find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
-      # recipes += Ingredient.find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
     else
       find(:all)
-
     end
   end
 end

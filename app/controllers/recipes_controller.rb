@@ -47,6 +47,10 @@ class RecipesController < ApplicationController
     redirect_to  profile_path(current_user.profile)
   end
 
+  # def random
+  #   @recipe = Recipe.offset(rand(Recipe.count)).first
+  # end
+
 private
   def prepare_recipe
 
