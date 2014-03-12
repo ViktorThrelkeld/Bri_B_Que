@@ -1209,6 +1209,7 @@ height: 100%;
 }
 body{
   font-family: 'Averia Serif Libre', cursive;
+  color: rgb(106, 74, 60);
   // background: asset-url("food.png", image)center;
   // background-size: cover
 background: #ff7f04; /* Old browsers */
@@ -1231,9 +1232,11 @@ background-attachment: fixed;
   text-shadow: 1px 1px rgb(189,0,0);
 }
 
-h1{
+h1, h4{
   font-family: 'Averia Serif Libre', cursive;
 }
+
+
 // image from http://pixabay.com/en/food-picnic-people-silhouette-kids-36427/
 // #picnic
 
@@ -1250,6 +1253,7 @@ h1{
 }
 
 .panel{
+  background-color: #6A4A3C;
   border:outset 1px #000000;
   -moz-border-radius-topleft: 37px;
   -moz-border-radius-topright:37px;
@@ -1263,6 +1267,15 @@ h1{
   border-top-right-radius:37px;
   border-bottom-left-radius:36px;
   border-bottom-right-radius:36px;
+
+  background: rgb(225,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(225,255,255,1) 0%, rgba(253,255,255,1) 0%, rgba(225,255,255,1) 7%, rgba(225,255,255,1) 12%, rgba(230,248,253,1) 30%, rgba(200,238,251,1) 54%, rgba(190,228,248,1) 75%, rgba(177,216,245,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(225,255,255,1)), color-stop(0%,rgba(253,255,255,1)), color-stop(7%,rgba(225,255,255,1)), color-stop(12%,rgba(225,255,255,1)), color-stop(30%,rgba(230,248,253,1)), color-stop(54%,rgba(200,238,251,1)), color-stop(75%,rgba(190,228,248,1)), color-stop(100%,rgba(177,216,245,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(225,255,255,1) 0%,rgba(253,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(225,255,255,1) 0%,rgba(253,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(225,255,255,1) 0%,rgba(253,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(225,255,255,1) 0%,rgba(253,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-9 */
 }
 
 .subheader{
@@ -1276,14 +1289,20 @@ h1{
   margin-right: 10px;
   float: right;
 }
+
 .button{
-  color: black;
+  // background-color: rgb(106, 74, 60);
+  color: white;
   display: inline;
+}
+
+.lucky {
+  background-color: rgb(106, 74, 60);
 }
 
 ul
 {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 textarea.vert{

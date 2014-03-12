@@ -3,9 +3,10 @@
     =image_tag "steak.png", id: 'steak'
 .row
   .small-12.columns
-    %h1= @profile.user.username
+    %h1= "#{@profile.user.username}" + "'s Profile"
 .row
   .small-6.columns
+    %h4= "About " + "#{@profile.user.username}"
     .panel
       %ul
         %li
@@ -26,6 +27,7 @@
       = link_to "New Recipe", new_recipe_path, class: 'button tiny radius'
 
   .small-6.columns
+    %h4 Search
     .panel
       = form_tag recipes_path, :method => 'get' do
         = text_field_tag :search, params[:search], :id => 'search_field'
@@ -37,10 +39,11 @@
         = link_to_function "Clear", "$('search_field').clear()"
 
   .small-6.columns
+    %h4 Recipes
     .panel
       - @profile.user.recipes.each do |x|
         .panel
           = link_to x.title, recipe_path(x.id)
           -if @profile == current_user.profile
             = link_to "Edit", edit_recipe_path(x.id), class: 'button tiny radius recipe_button'
-            = link_to "Delete", recipe_path(x.id), data: {id: x.id }, class: 'button tiny radius recipe_button'
+            = link_to "Delete", recipe_path(x.id), method: :delete, data: {id: x.id }, class: 'button tiny radius recipe_button'

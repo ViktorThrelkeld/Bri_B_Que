@@ -1,39 +1,13 @@
 .row
   .small-3.columns
-    / .panel
     = form_tag recipes_path, :method => 'get' do
       = text_field_tag :search, params[:search], :id => 'search_field'
-      = submit_tag "Search By Recipe Title", :name => nil
-      / = link_to_function "Clear", "$('search_field').clear()"
+      = submit_tag "Search By Recipe Title", :name => nil, class: 'button tiny radius'
+  .small-offset-2.small-3.columns
+    = link_to "I'm Feelin' Lucky", recipe_random_path, class: 'button tiny radius lucky'
   .small-3.columns
-    / .panel
     = form_tag ingredients_path, :method => 'get' do
       = text_field_tag :search, params[:search], :id => 'search_field'
-      = submit_tag "Search By Ingredients", :name => nil
-      / = link_to_function "Clear", "$('search_field').clear()"
-/ .row
-/   .small-6.columns
-/     = button_to "Random", recipes_random_path, method: :get
+      = submit_tag "Search By Ingredients", :name => nil, class: 'button tiny radius'
 .row
   =image_tag "picnic.png", id: 'picnic'
-
-/ .row
-/   .large-12.columns
-/     - if @recipe.present?
-/       %h1 Random Recipe
-/       .subheader
-/         recipe by
-/       %p= @recipe.user.username
-/       %p= @recipe.title
-/       %p= @recipe.prep_time
-/       .subheader
-/         Ingredients:
-/       .panel
-/         - @recipe.recipeingredients.each do |recipeingredient|
-/           %p
-/             = recipeingredient.quantity
-/             = recipeingredient.ingredient.name
-/       .subheader
-/         Instructions:
-/       .panel
-/         %p= @recipe.instructions
