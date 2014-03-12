@@ -1224,14 +1224,40 @@ background-repeat: no-repeat;
 background-attachment: fixed;
   }
 
+#title{
+  font-family: 'Sigmar One', cursive;  color: white;
+  font-size: 2em;
+  text-shadow: 1px 1px rgb(189,0,0);
+}
+
+// image from http://pixabay.com/en/food-picnic-people-silhouette-kids-36427/
+// #picnic
+
+// image from http://pixabay.com/en/red-food-cartoon-beef-meat-ribs-31973/
+#brisket{
+  display: inline;
+  position:absolute;
+  right: 100px;
+}
+
+
+// image from http://pixabay.com/en/food-cartoon-beef-meat-lamb-ribs-31971/
 #ribs{
   display: inline;
   position:absolute;
   right: 100px;
 }
 
-#title{
-  font-family: 'Sigmar One', cursive;  color: white;
-  font-size: 2em;
-  text-shadow: 1px 1px rgb(189,0,0);
+// image from http://www.pd4pic.com/images150_/red-top-food-cartoon-round-steak-automatic-beef.png
+#steak{
+  display: inline;
+  position:absolute;
+  right: 100px;
+}
+
+// image from image from http://pixabay.com/en/red-food-drawing-cartoon-meat-31969/
+#two_steaks{
+  display: inline;
+  position:absolute;
+  right: 100px;
 }
