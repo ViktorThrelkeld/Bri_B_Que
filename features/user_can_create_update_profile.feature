@@ -34,7 +34,7 @@ Feature: Create and update profile
     And I should see "My Profile"
     When I follow "My Profile"
     Then I should be on my profile page
-    When I press "Update Profile"
+    When I follow "Update Profile"
     Then I should be on update profile page
     Then I should see "Update Profile"
     And I fill in "Backyard Smoker" for "Bio"

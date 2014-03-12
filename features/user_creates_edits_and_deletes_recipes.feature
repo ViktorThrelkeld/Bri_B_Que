@@ -35,7 +35,7 @@ Feature: Create a recipe
     And I fill in "10 min." for "Cook time"
     And I fill in "1. Fry chicken and douse in hot sauce 2. Enjoy!" for "Instructions"
     And I fill in "1/2 cup" for "Quantity"
-    And I follow "Create new ingredient"
+    And I follow "Create A New Ingredient"
     And I fill in "salt" for "Ingredient name"
     And I press "Post Recipe"
     Then I should see "Your recipe has been posted"
@@ -102,7 +102,7 @@ Feature: Create a recipe
     When I follow "My Profile"
     Then I should be on my profile page
     And I should see "Ribs"
-    And I press "Edit"
+    And I follow "Edit"
     Then I should see "Edit Recipe"
     When I fill in "Hot Chicken" for "Title"
     And I press "Update Recipe"
@@ -129,7 +129,7 @@ Feature: Create a recipe
     When I follow "My Profile"
     Then I should be on my profile page
     And I should see "Ribs"
-    And I press "Delete"
+    And I follow "Delete"
     Then I should be on my profile page
     And I should see "Your recipe has been deleted"
     And I should not see "Ribs"
