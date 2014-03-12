@@ -1231,36 +1231,18 @@ background-attachment: fixed;
   text-shadow: 1px 1px rgb(189,0,0);
 }
 
+h1{
+  font-family: 'Averia Serif Libre', cursive;
+}
 // image from http://pixabay.com/en/food-picnic-people-silhouette-kids-36427/
 // #picnic
 
-// image from http://pixabay.com/en/red-food-cartoon-beef-meat-ribs-31973/
-#brisket{
-  display: inline;
-  position:absolute;
-  right: 100px;
-  top: 20px;
-}
-
-
-// image from http://pixabay.com/en/food-cartoon-beef-meat-lamb-ribs-31971/
-#ribs{
-  display: inline;
-  position:absolute;
-  right: 100px;
-  top: 20px;
-}
-
-// image from http://www.pd4pic.com/images150_/red-top-food-cartoon-round-steak-automatic-beef.png
-#steak{
-  display: inline;
-  position:absolute;
-  right: 100px;
-  top: 20px;
-}
-
-// image from image from http://pixabay.com/en/red-food-drawing-cartoon-meat-31969/
-#two_steaks{
+//brisket image from http://pixabay.com/en/red-food-cartoon-beef-meat-ribs-31973/
+//bacon image from http://pixabay.com/en/red-pig-bacon-breakfast-meat-31984/
+//ribs image from http://pixabay.com/en/food-cartoon-beef-meat-lamb-ribs-31971/
+//steak image from http://www.pd4pic.com/images150_/red-top-food-cartoon-round-steak-automatic-beef.png
+//two_steaks image from image from http://pixabay.com/en/red-food-drawing-cartoon-meat-31969/
+#brisket, #bacon, #ribs, #steak, #two_steaks{
   display: inline;
   position:absolute;
   right: 100px;
