@@ -19,10 +19,13 @@
         %p
           = recipeingredient.quantity
           = recipeingredient.ingredient.name
+.row
+  .large-12.columns
     .subheader
       Instructions:
     .panel
       %p= @recipe.instructions
+
     -if @recipe.user == current_user
-      = button_to "Edit", edit_recipe_path(@recipe), method: :get
-      = button_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id }
+      = button_to "Edit", edit_recipe_path(@recipe), method: :get, class: 'button tiny radius'
+      = button_to "Delete", recipe_path(@recipe), method: :delete, data: {id: @recipe.id }, class: 'button tiny radius'
