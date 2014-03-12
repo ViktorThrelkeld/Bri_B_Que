@@ -12,7 +12,6 @@ Feature: Create and update profile
     And I fill in "smalltown, IN" for "Hometown"
     And I fill in "45" for "Age"
     And I press "Create Profile"
-    Then I should see "Your Profile"
     And I should see "BBQ Ambassador"
     And I should see "smalltown, IN"
     And I should see "45"
