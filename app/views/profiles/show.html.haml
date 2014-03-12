@@ -7,10 +7,16 @@
 .row
   .small-6.columns
     .panel
+      .subheader
+        Bio:
       %p= @profile.bio
+      .subheader
+        Hometown:
       %p= @profile.hometown
+      .subheader
+        Age:
       %p= @profile.age
-      = button_to "Update Profile", edit_profile_path(@profile), :method => :get
+      = button_to "Update Profile", edit_profile_path(@profile), :method => :get, class: 'button tiny radius'
   .small-6.columns
     .panel
       = form_tag recipes_path, :method => 'get' do
@@ -32,5 +38,5 @@
         .panel
           = link_to x.title, recipe_path(x.id)
         -if @profile == current_user.profile
-          = button_to "Edit", edit_recipe_path(x.id), method: :get
-          = button_to "Delete", recipe_path(x.id), method: :delete, data: {id: x.id }
+          = button_to "Edit", edit_recipe_path(x.id), method: :get, class: 'button tiny radius'
+          = button_to "Delete", recipe_path(x.id), method: :delete, data: {id: x.id }, class: 'button tiny radius'
