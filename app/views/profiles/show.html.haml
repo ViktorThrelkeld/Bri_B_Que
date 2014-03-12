@@ -3,18 +3,18 @@
     =image_tag "steak.png", id: 'steak'
 .row
   .small-12.columns
-    %h1 Your Profile
+    %h1= @profile.user.username
 .row
   .small-6.columns
     .panel
-      %p= current_user.username
       %p= @profile.bio
       %p= @profile.hometown
       %p= @profile.age
       = button_to "Update Profile", edit_profile_path(@profile), :method => :get
   .small-6.columns
-    .panel
-      = link_to "New Recipe", new_recipe_path, :method=>:get
+    -if @profile == current_user.profile
+      .panel
+        = link_to "New Recipe", new_recipe_path, :method=>:get
 .row
   .small-6.columns
     .panel
@@ -32,5 +32,6 @@
       - @profile.user.recipes.each do |x|
         .panel
           = link_to x.title, recipe_path(x.id)
+        -if @profile == current_user.profile
           = button_to "Edit", edit_recipe_path(x.id), method: :get
           = button_to "Delete", recipe_path(x.id), method: :delete, data: {id: x.id }

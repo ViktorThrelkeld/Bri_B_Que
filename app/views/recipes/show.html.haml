@@ -1,17 +1,28 @@
 .row
-  .large-12.columns
-    %h1 Show Recipe
-    .fieldset
-      .legend
+  .small-12.columns
+    %h1= @recipe.title
+.row
+  .small-6.columns
+    .panel
+      .subheader
         recipe by
-        %p= @recipe.user.username
-    .subheader
-      recipe title:
-    %p= @recipe.title
-    %blockquote= @recipe.description
-    %p= @recipe.servings
-    %p= @recipe.prep_time
-    %p= @recipe.cook_time
+      %p= link_to "#{@recipe.user.username}", profile_path(@recipe.user.profile)
+      .subheader
+        Description:
+      %p= @recipe.description
+  .small-6.columns
+    .panel
+      .subheader
+        Servings:
+      %p= @recipe.servings
+      .subheader
+        Prep time:
+      %p= @recipe.prep_time
+      .subheader
+        Cook time:
+      %p= @recipe.cook_time
+.row
+  .large-6.columns
     .subheader
       Ingredients:
     .panel
