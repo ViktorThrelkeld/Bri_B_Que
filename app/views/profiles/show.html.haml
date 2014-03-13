@@ -31,11 +31,11 @@
     .panel
       = form_tag recipes_path, :method => 'get' do
         = text_field_tag :search, params[:search], :id => 'search_field'
-        = submit_tag "Search By Recipe Title", :name => nil
+        = submit_tag "Search By Recipe Title", :name => nil, class: 'button tiny radius'
         = link_to_function "Clear", "$('search_field').clear()"
       = form_tag ingredients_path, :method => 'get' do
         = text_field_tag :search, params[:search], :id => 'search_field'
-        = submit_tag "Search By Ingredients", :name => nil
+        = submit_tag "Search By Ingredients", :name => nil, class: 'button tiny radius'
         = link_to_function "Clear", "$('search_field').clear()"
 
   .small-6.columns
