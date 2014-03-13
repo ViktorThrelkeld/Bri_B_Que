@@ -29,13 +29,14 @@
   </div>
 
   <div class="small-4  columns">
+    <h5>Ingredients</h5>
     <fieldset id="ingredients">
        <%= f.fields_for :recipeingredients do |recipe_ingredient| %>
          <%= render "recipeingredient_fields", :f => recipe_ingredient %>
        <% end %>
 
-     <div class = "links">
-       <%= link_to_add_association 'Add Another Ingredient Field', f, :recipeingredients %>
+     <div class = "links margin-top-10">
+       <%= link_to_add_association 'Add Another Ingredient', f, :recipeingredients %>
      </div>
      </fieldset>
      <%= f.submit "Post Recipe", class: 'button tiny radius' %>

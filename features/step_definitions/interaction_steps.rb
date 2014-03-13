@@ -18,6 +18,11 @@ When(/^I follow "(.*?)"$/) do |link|
   click_link(link)
 end
 
+When(/^I select "(.*?)" from "(.*?)"$/) do |option, select_box|
+  select(option, :from => select_box)
+end
+
+
 Then(/^I should not see "(.*?)"$/) do |text|
    page.should_not have_content(text)
 end

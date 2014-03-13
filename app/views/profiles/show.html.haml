@@ -23,7 +23,7 @@
           %span= @profile.age
 
     -if @profile == current_user.profile
-      = link_to "Update Profile", edit_profile_path(@profile),  class: 'button tiny radius'
+      = link_to "Update Profile", edit_profile_path(@profile), class: 'button tiny radius'
       = link_to "New Recipe", new_recipe_path, class: 'button tiny radius'
 
   .small-6.columns
@@ -41,9 +41,13 @@
   .small-6.columns
     %h4 Recipes
     .panel
-      - @profile.user.recipes.each do |x|
-        .panel
-          = link_to x.title, recipe_path(x.id)
-          -if @profile == current_user.profile
-            = link_to "Edit", edit_recipe_path(x.id), class: 'button tiny radius recipe_button'
-            = link_to "Delete", recipe_path(x.id), method: :delete, data: {id: x.id }, class: 'button tiny radius recipe_button'
+      - @recipes.each do |x|
+        .panel.recipe-panels
+          .row.margin-top-10
+            .large-8.columns
+              = link_to x.title, recipe_path(x.id)
+            -if @profile == current_user.profile
+              .large-2.columns
+                = link_to "Edit", edit_recipe_path(x.id), class: 'button tiny radius recipe_button'
+              .large-2.columns
+                = link_to "Delete", recipe_path(x.id), method: :delete, data: {id: x.id }, class: 'button tiny radius recipe_button'

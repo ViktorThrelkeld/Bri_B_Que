@@ -40,6 +40,10 @@ Given /^(?:that|those) (.*) belongs? to that (.*)$/ do |children, parent|
   end
 end
 
+Given(/^that the ingredient "(.*?)" exists$/) do |name|
+  Fabricate(:ingredient, name: name)
+end
+
 Then /^I should see (\d+) ([^"]*) in the database$/ do |count, model_name|
   Fabrication::Cucumber::StepFabricator.new(model_name).klass.count.should == count.to_i
 end

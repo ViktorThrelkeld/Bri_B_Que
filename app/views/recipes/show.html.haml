@@ -44,7 +44,7 @@
     .subheader
       Instructions:
     .panel
-      %textarea= @recipe.instructions
+      %textarea{rows: 4}= @recipe.instructions
 
     -if @recipe.user == current_user
       = link_to "Edit", edit_recipe_path(@recipe), method: :get, class: 'button tiny radius'

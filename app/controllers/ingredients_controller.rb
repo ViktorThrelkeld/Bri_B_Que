@@ -5,7 +5,7 @@ class IngredientsController < ApplicationController
     recipes = ingredients.each_with_object([]) do |ingredient, array|
       array << ingredient.recipes
     end
-    @recipes = recipes.flatten
+    @recipes = recipes.flatten.uniq
   end
 
   def new

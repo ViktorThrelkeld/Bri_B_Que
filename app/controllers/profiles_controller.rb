@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @recipes = @profile.user.recipes.sort_by_title
   end
 
   def edit

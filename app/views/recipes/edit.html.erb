@@ -22,7 +22,7 @@
       <%= f.label :cook_time %>
       <%= f.text_area(:cook_time) %>
       <%= f.label :instructions %>
-      <%= f.text_area(:instructions) %>
+      <%= f.text_area(:instructions, rows: 4) %>
       <fieldset id="ingredients">
         <div>
           <%= f.fields_for :recipeingredients do |recipe_ingredient| %>
@@ -30,7 +30,7 @@
           <% end %>
         </div>
         <div class = "links">
-          <%= link_to_add_association 'add ingredient', f, :recipeingredients %>
+          <%= link_to_add_association 'Add Ingredient', f, :recipeingredients %>
         </div>
       </fieldset>
       <%= f.submit "Update Recipe", class: 'button tiny radius' %>

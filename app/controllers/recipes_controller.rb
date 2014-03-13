@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.search(params[:search])
+    @recipes = Recipe.sort_by_title.search(params[:search].titleize)
   end
 
   def new

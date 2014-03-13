@@ -1,11 +1,12 @@
-<div class='ingredient-wrapper'>
+<div class='ingredient-wrapper margin-top-10'>
   <div>
+    <%= f.label :ingredient_id, "Ingredient" %>
+    <%= f.select :ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :name), :prompt => "Choose an ingredient" %>
     <%= f.label :quantity %>
     <%= f.text_field :quantity, size: "10" %>
-    <%= f.select :ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :name), :prompt => "Choose an ingredient" %>
-    <%= link_to_remove_association("Remove Ingredient Field", f,{ wrapper_class: 'ingredient-wrapper' }) %>
+    <%= link_to_remove_association("Remove Ingredient", f,{ wrapper_class: 'ingredient-wrapper' }) %>
   </div>
-  <div>
+  <div class="margin-top-10">
     <%= link_to_add_association "Create A New Ingredient", f, :ingredient %>
   </div>
 </div>

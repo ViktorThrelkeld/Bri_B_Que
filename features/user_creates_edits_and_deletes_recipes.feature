@@ -13,7 +13,7 @@ Feature: Create a recipe
     Then I should see "Create A Recipe"
     When I press "Post Recipe"
     Then I should see "Your fields can't be blank"
-  @focus
+
   @javascript
   Scenario: User can create a recipe with a title, prep time and instructions succeeds
     Given the following user:
@@ -34,9 +34,9 @@ Feature: Create a recipe
     And I fill in "30 min." for "Prep time"
     And I fill in "10 min." for "Cook time"
     And I fill in "1. Fry chicken and douse in hot sauce 2. Enjoy!" for "Instructions"
-    And I fill in "1/2 cup" for "Quantity"
     And I follow "Create A New Ingredient"
     And I fill in "salt" for "Ingredient name"
+    And I fill in "1/2 cup" for "Quantity"
     And I press "Post Recipe"
     Then I should see "Your recipe has been posted"
     And I should be on the show recipe page
@@ -83,6 +83,7 @@ Feature: Create a recipe
     And I should see "delicious"
     And I should see "3"
 
+  @javascript
   Scenario: User can edit Recipes listed on My Profile
     Given the following user:
       | username              | joe             |
@@ -98,17 +99,22 @@ Feature: Create a recipe
       |cook_time    | 5 hrs  |
       |description  | delicious |
       |servings     | 3 |
-      When I sign in
+    Given that the ingredient "chicken" exists
+    When I sign in
     When I follow "My Profile"
     Then I should be on my profile page
     And I should see "Ribs"
     And I follow "Edit"
     Then I should see "Edit Recipe"
     When I fill in "Hot Chicken" for "Title"
+    And I follow "Add Ingredient"
+    And I select "chicken" from "Ingredient"
+    And I fill in "1" for "Quantity"
     And I press "Update Recipe"
     Then I should be on the show recipe page
     And I should see "Hot Chicken"
     And I should see "5 hrs."
+    And I should see "1 chicken"
 
   Scenario: User can delete Recipes listed on My Profile
     Given the following user:
