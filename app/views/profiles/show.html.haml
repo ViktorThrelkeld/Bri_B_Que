@@ -42,7 +42,7 @@
     %h4 Recipes
     .panel
       - @recipes.each do |x|
-        .panel.recipe-panels
+        %div{class: "panel #{@profile == current_user.profile ? 'recipe-panels' : ''}"}
           .row.margin-top-10
             .large-8.columns
               = link_to x.title, recipe_path(x.id)
