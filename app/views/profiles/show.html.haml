@@ -22,7 +22,7 @@
             Age:
           %span= @profile.age
 
-    -if @profile == current_user.profile
+    -if current_user && @profile == current_user.profile
       = link_to "Update Profile", edit_profile_path(@profile), class: 'button tiny radius'
       = link_to "New Recipe", new_recipe_path, class: 'button tiny radius'
 
@@ -42,11 +42,11 @@
     %h4 Recipes
     .panel
       - @recipes.each do |x|
-        %div{class: "panel #{@profile == current_user.profile ? 'recipe-panels' : ''}"}
+        %div{class: "panel #{current_user && @profile == current_user.profile ? 'recipe-panels' : ''}"}
           .row.margin-top-10
             .large-8.columns
               = link_to x.title, recipe_path(x.id)
-            -if @profile == current_user.profile
+            -if current_user && @profile == current_user.profile
               .large-2.columns
                 = link_to "Edit", edit_recipe_path(x.id), class: 'button tiny radius recipe_button'
               .large-2.columns
