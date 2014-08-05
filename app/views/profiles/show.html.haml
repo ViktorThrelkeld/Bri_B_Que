@@ -10,6 +10,8 @@
     .panel
       %ul
         %li
+          %image_tag= @profile.image_url(:thumb).to_s
+        %li
           .subheader
             Bio:
           %span= @profile.bio

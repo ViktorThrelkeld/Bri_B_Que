@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem "cocoon"
 gem 'coffee-rails', '~> 4.0.0'
+gem 'carrierwave'
 gem 'devise'
 # Use jquery as the JavaScript library
 gem 'foundation-rails'
@@ -11,6 +12,7 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.0.2'
+gem 'rmagick', :require => 'RMagick'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'

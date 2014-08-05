@@ -7,8 +7,10 @@
 .row
   .small-12.medium-6.columns
     .panel
-      = form_for Profile.new do |f|
+      = form_for Profile.new , :hmtl => { :multipart => true } do |f|
         .inputs
+          = f.label :image
+          = f.file_field :image
           = f.label :bio
           = f.text_area(:bio)
           = f.label :hometown
