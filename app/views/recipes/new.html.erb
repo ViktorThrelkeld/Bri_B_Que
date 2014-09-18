@@ -10,7 +10,9 @@
 </div>
 <div class="row">
   <div class="small-12 columns">
-    <%= form_for @recipe do |f| %>
+    <%= form_for @recipe, :hmtl => { :multipart => true } do |f| %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
       <%= f.label :title %>
       <%= f.text_area(:title) %>
       <%= f.label :description %>

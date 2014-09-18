@@ -65,6 +65,7 @@ private
       :instructions,
       :description,
       :servings,
+      :image,
       :recipeingredients_attributes => [
         :id,
         :quantity,
